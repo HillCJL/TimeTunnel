@@ -1,0 +1,12 @@
+﻿  final.cpp
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\shader.h(61): warning C4101: “infoLog”: 未引用的局部变量
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\shader.h(60): warning C4101: “success”: 未引用的局部变量
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(22): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(53): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(90): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(107): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(132): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+e:\课程\大三下\作业\计算机图形学\final\opengl_hw1\opengl_hw1\final.cpp(145): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
+  opengl_hw1.vcxproj -> E:\课程\大三下\作业\计算机图形学\final\opengl_hw1\Debug\opengl_hw1.exe
+  opengl_hw1.vcxproj -> E:\课程\大三下\作业\计算机图形学\final\opengl_hw1\Debug\opengl_hw1.pdb (Partial PDB)
