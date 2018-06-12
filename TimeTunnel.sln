@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl_hw1", "opengl_hw1\opengl_hw1.vcxproj", "{7DFB60E7-234A-441C-85D6-CFB3950718BA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeTunnel", "TimeTunnel\TimeTunnel.vcxproj", "{7DFB60E7-234A-441C-85D6-CFB3950718BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FF0BE2D-4CC9-4CDB-BA62-292C86D5AEAF}
 	EndGlobalSection
 EndGlobal
