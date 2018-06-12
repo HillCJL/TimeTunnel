@@ -329,4 +329,4 @@ ASALocalRun/
 .mfractor/
 
 ## specific obj files
-!opengl_hw1\opengl_hw1\model
+!/TimeTunnel/model/**
