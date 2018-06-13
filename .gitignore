@@ -329,4 +329,4 @@ ASALocalRun/
 .mfractor/
 
 ## specific obj files
-!/TimeTunnel/model/**
+!/TimeTunnel/assets/model/**

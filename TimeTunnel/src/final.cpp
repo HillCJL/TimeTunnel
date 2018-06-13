@@ -155,8 +155,9 @@ int main() {
     Shader ParticleHDRShader("assets/shader/final_particle.vs", "assets/shader/final_particle_hdr.fs");
     Shader shaderBlur("assets/shader/final_particle_gaussian.vs", "assets/shader/final_particle_gaussian.fs");
 
-    //在这个地方改下路径就完事了
-    string path("assets/model/nanosuit/nanosuit.obj");
+    // 在这个地方改下路径就完事了
+     //string path("assets/model/nanosuit/nanosuit.obj");
+    string path("assets/model/test/test.obj");
 
     Model ourModel(path, false);
 
