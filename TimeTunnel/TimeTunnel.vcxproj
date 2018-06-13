@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(ProjectDir)imgui;$(ProjectDir)include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)include;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\imgui;C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\include;$(IncludePath)</IncludePath>
