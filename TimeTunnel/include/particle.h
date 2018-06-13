@@ -13,7 +13,7 @@ using namespace std;
 
 
 
-struct Particle{
+struct Particle {
 
     int life_time;
     glm::vec3 positon;
@@ -22,7 +22,7 @@ struct Particle{
 };
 
 class round_particle_action {
-    
+
     vector<Particle> partical_list;
     int init_size, init_size_per_circle;
     float total_length, R, speed_forward, speed_rotate, speed_scale;

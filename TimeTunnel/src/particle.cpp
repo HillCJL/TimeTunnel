@@ -50,7 +50,7 @@ void round_particle_action::init() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-round_particle_action::round_particle_action(int size, int per_circle, float total, float r, float f, float rot, float s,float z) {
+round_particle_action::round_particle_action(int size, int per_circle, float total, float r, float f, float rot, float s, float z) {
     init_size = size;
     init_size_per_circle = per_circle;
     total_length = total;
@@ -62,14 +62,14 @@ round_particle_action::round_particle_action(int size, int per_circle, float tot
     //srand(time(NULL));
     rand();
     int circle = init_size / init_size_per_circle;
-    for ( int i = 0; i < init_size; i++ ) {
+    for (int i = 0; i < init_size; i++) {
         int radius = i % init_size_per_circle, h = i / init_size_per_circle;
         //float randfloat = (float(rand() % 1000) / 1000 - 0.5)/4;
         Particle particle;
-        particle.positon = glm::vec3(float(cos(float(radius + float(h)/circle) / init_size_per_circle * 360)) * R, float(sin(float(radius + float(h) / circle) / init_size_per_circle * 360)) * R, z_pos -total_length * ((h + float(radius)/init_size_per_circle - 0.5)/circle - 0.5f));
+        particle.positon = glm::vec3(float(cos(float(radius + float(h) / circle) / init_size_per_circle * 360)) * R, float(sin(float(radius + float(h) / circle) / init_size_per_circle * 360)) * R, z_pos - total_length * ((h + float(radius) / init_size_per_circle - 0.5) / circle - 0.5f));
 
         //particle.positon = glm::vec3(float(cos((radius + randfloat) / init_size_per_circle * 360)) * R, float(sin((radius + randfloat) / init_size_per_circle * 360)) * R, -total_length * ((h + randfloat)/circle - 0.5f));
-        particle.life_time = int(total_length / speed_forward) * (circle - h + 1)/10;
+        particle.life_time = int(total_length / speed_forward) * (circle - h + 1) / 10;
         particle.size = rand() % 100 / 50 + 1;
         particle.color = glm::vec4(0.0f, 0.7f, 1.0f, 0.6f);
         partical_list.push_back(particle);
@@ -79,7 +79,7 @@ round_particle_action::round_particle_action(int size, int per_circle, float tot
 void round_particle_action::Draw(Shader shader) {
     glBindVertexArray(VAO);
     shader.use();
-    for ( int i = 0; i < partical_list.size(); i++ ) {
+    for (int i = 0; i < partical_list.size(); i++) {
         shader.setMat4("model", glm::translate(glm::mat4(), partical_list[i].positon));
         shader.setVec4("Color", partical_list[i].color);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -89,9 +89,9 @@ void round_particle_action::Draw(Shader shader) {
 }
 
 void round_particle_action::Update() {
-    for ( int i = partical_list.size() - 1; i >=0; i-- ) {
+    for (int i = partical_list.size() - 1; i >= 0; i--) {
         partical_list[i].life_time--;
-        if ( partical_list[i].life_time < 0 || partical_list[i].positon.z < -total_length/2 + z_pos) {
+        if (partical_list[i].life_time < 0 || partical_list[i].positon.z < -total_length / 2 + z_pos) {
             partical_list.erase(partical_list.begin() + i);
             continue;
         }
@@ -101,13 +101,13 @@ void round_particle_action::Update() {
         model = glm::scale(model, glm::vec3(1 - speed_scale, 1 - speed_scale, 1));
         partical_list[i].positon = glm::vec3(model * glm::vec4(partical_list[i].positon, 1.0));
     }
-    if ( partical_list.size() < init_size - init_size_per_circle + 1 ) {
+    if (partical_list.size() < init_size - init_size_per_circle + 1) {
         int circle = init_size / init_size_per_circle;
-        for ( int i = 0; i < init_size_per_circle; i++ ) {
+        for (int i = 0; i < init_size_per_circle; i++) {
             //float randfloat = (float(rand() % 1000) / 1000 - 0.5) / 4;
             Particle particle;
             //particle.positon = glm::vec3(float(cos((i + randfloat) / init_size_per_circle * 360)) * R, float(sin((i + randfloat) / init_size_per_circle * 360)) * R, 0.5f +  float(rand() % 20-10)/20 * 0.5f/circle * total_length);
-            particle.positon = glm::vec3(float(cos(float(i) / init_size_per_circle * 360)) * R, float(sin(float(i) / init_size_per_circle * 360)) * R, 0.5f + (float(i)/init_size_per_circle - 0.5) * 0.5f / circle * total_length + z_pos);
+            particle.positon = glm::vec3(float(cos(float(i) / init_size_per_circle * 360)) * R, float(sin(float(i) / init_size_per_circle * 360)) * R, 0.5f + (float(i) / init_size_per_circle - 0.5) * 0.5f / circle * total_length + z_pos);
             particle.life_time = int(total_length / speed_forward) * circle / 10;
             particle.size = rand() % 100 / 50 + 1;
             particle.color = glm::vec4(0.0f, 0.7f, 1.0f, 0.6f);

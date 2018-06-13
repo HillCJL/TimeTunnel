@@ -19,7 +19,7 @@ My_Camera::My_Camera() {
 }
 
 void My_Camera::updateCameraFrontRight() {
-    
+
     camera_right = glm::cross(camera_direction - camera_pos, camera_up);
     camera_front = glm::cross(glm::vec3(0.0f, 1.0f, 0.0f), camera_right);
 }
@@ -81,19 +81,19 @@ void My_Camera::moveLeft() {
 
 void My_Camera::rotate(float left, float top) {
     updateCameraFrontRight();
-    if ( left != 0 ) {
+    if (left != 0) {
         glm::quat left_quat = glm::quat(left / p_width * sensitivity, glm::vec3(0.0f, 1.0f, 0.0f));
         camera_direction = glm::normalize((camera_direction - camera_pos) * left_quat) + camera_pos;
         camera_up = glm::normalize(camera_up * left_quat);
-        
+
     }
     updateCameraFrontRight();
-    if ( top != 0 ) {
+    if (top != 0) {
         glm::vec3 new_camera_direction;
-        glm::quat top_quat = glm::quat(top / p_height  * sensitivity, camera_right);
+        glm::quat top_quat = glm::quat(top / p_height * sensitivity, camera_right);
         camera_direction = glm::normalize((camera_direction - camera_pos) * top_quat) + camera_pos;
         camera_up = glm::normalize(camera_up * top_quat);
-        if ( camera_up.y < 0 ) camera_up = -camera_up;
+        if (camera_up.y < 0) camera_up = -camera_up;
     }
     /*
     if ( top != 0 ) {

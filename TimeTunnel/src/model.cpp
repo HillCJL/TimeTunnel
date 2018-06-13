@@ -15,16 +15,16 @@ void Mesh::Draw(Shader shader) {
     unsigned int specularNr = 1;
     unsigned int normalNr = 1;
     unsigned int heightNr = 1;
-    for ( unsigned int i = 0; i < textures.size(); i++ ) {
-        glActiveTexture(GL_TEXTURE0 + i); 
+    for (unsigned int i = 0; i < textures.size(); i++) {
+        glActiveTexture(GL_TEXTURE0 + i);
 
         string number;
         string name = textures[i].type;
-        if ( name == "texture_diffuse" ) number = std::to_string(diffuseNr++);
-        else if ( name == "texture_specular" ) number = std::to_string(specularNr++);
-        else if ( name == "texture_normal" ) number = std::to_string(normalNr++);
-        else if ( name == "texture_height" ) number = std::to_string(heightNr++);
-                                     
+        if (name == "texture_diffuse") number = std::to_string(diffuseNr++);
+        else if (name == "texture_specular") number = std::to_string(specularNr++);
+        else if (name == "texture_normal") number = std::to_string(normalNr++);
+        else if (name == "texture_height") number = std::to_string(heightNr++);
+
         glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), i);
 
         glBindTexture(GL_TEXTURE_2D, textures[i].id);
@@ -74,13 +74,13 @@ void Mesh::setupMesh() {
 
 
 
-Model::Model(string &path, bool gamma = false): gammaCorrection(gamma) {
+Model::Model(string &path, bool gamma = false) : gammaCorrection(gamma) {
     loadModel(path);
 }
 
 
 void Model::Draw(Shader shader) {
-    for ( unsigned int i = 0; i < meshes.size(); i++ )
+    for (unsigned int i = 0; i < meshes.size(); i++)
         meshes[i].Draw(shader);
 }
 
@@ -89,7 +89,7 @@ void Model::loadModel(string &path) {
     Assimp::Importer importer;
     const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
 
-    if ( !scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode ) // if is Not Zero
+    if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
     {
         cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
         return;
@@ -103,12 +103,12 @@ void Model::loadModel(string &path) {
 
 void Model::processNode(aiNode *node, const aiScene *scene) {
 
-    for ( unsigned int i = 0; i < node->mNumMeshes; i++ ) {
+    for (unsigned int i = 0; i < node->mNumMeshes; i++) {
         aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
         meshes.push_back(processMesh(mesh, scene));
     }
 
-    for ( unsigned int i = 0; i < node->mNumChildren; i++ ) {
+    for (unsigned int i = 0; i < node->mNumChildren; i++) {
         processNode(node->mChildren[i], scene);
     }
 
@@ -121,7 +121,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
     vector<Texture> textures;
 
 
-    for ( unsigned int i = 0; i < mesh->mNumVertices; i++ ) {
+    for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
         Vertex vertex;
         glm::vec3 vector;
         vector.x = mesh->mVertices[i].x;
@@ -134,7 +134,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
         vector.z = mesh->mNormals[i].z;
         vertex.Normal = vector;
 
-        if ( mesh->mTextureCoords[0] ) {
+        if (mesh->mTextureCoords[0]) {
             glm::vec2 vec;
 
             vec.x = mesh->mTextureCoords[0][i].x;
@@ -156,10 +156,10 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
         vertices.push_back(vertex);
     }
 
-    for ( unsigned int i = 0; i < mesh->mNumFaces; i++ ) {
+    for (unsigned int i = 0; i < mesh->mNumFaces; i++) {
         aiFace face = mesh->mFaces[i];
 
-        for ( unsigned int j = 0; j < face.mNumIndices; j++ )
+        for (unsigned int j = 0; j < face.mNumIndices; j++)
             indices.push_back(face.mIndices[j]);
     }
 
@@ -182,19 +182,19 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
 
 vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName) {
     vector<Texture> textures;
-    for ( unsigned int i = 0; i < mat->GetTextureCount(type); i++ ) {
+    for (unsigned int i = 0; i < mat->GetTextureCount(type); i++) {
         aiString str;
         mat->GetTexture(type, i, &str);
 
         bool skip = false;
-        for ( unsigned int j = 0; j < textures_loaded.size(); j++ ) {
-            if ( std::strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0 ) {
+        for (unsigned int j = 0; j < textures_loaded.size(); j++) {
+            if (std::strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0) {
                 textures.push_back(textures_loaded[j]);
-                skip = true; 
+                skip = true;
                 break;
             }
         }
-        if ( !skip ) {
+        if (!skip) {
             Texture texture;
             texture.id = TextureFromFile(str.C_Str(), this->directory);
             texture.type = typeName;
@@ -216,13 +216,13 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 
     int width, height, nrComponents;
     unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
-    if ( data ) {
+    if (data) {
         GLenum format;
-        if ( nrComponents == 1 )
+        if (nrComponents == 1)
             format = GL_RED;
-        else if ( nrComponents == 3 )
+        else if (nrComponents == 3)
             format = GL_RGB;
-        else if ( nrComponents == 4 )
+        else if (nrComponents == 4)
             format = GL_RGBA;
 
         glBindTexture(GL_TEXTURE_2D, textureID);

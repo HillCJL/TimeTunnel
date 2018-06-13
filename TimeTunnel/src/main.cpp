@@ -14,7 +14,7 @@ void processInput(GLFWwindow *window) {
         glfwSetWindowShouldClose(window, true);
 }
 
-const char *vertexShaderSource = 
+const char *vertexShaderSource =
 "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
 "layout (location = 1) in vec4 aColor;\n"
@@ -72,7 +72,7 @@ int main() {
         0.0f, 1.0f, 0.0f, 1.0f
     };
     float my_color[] = { 1.0f, 0.0f, 0.0f, 1.0f,
-        0.0f, 1.0f, 0.0f, 1.0f, 
+        0.0f, 1.0f, 0.0f, 1.0f,
         0.0f, 0.0f, 1.0f, 1.0f};
     unsigned int indices[] = {
         0, 1, 2,
@@ -172,15 +172,15 @@ int main() {
             glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
         }
 
-        
+
 
         {
-           
-            ImGui::Text("Color Tool");                          
+
+            ImGui::Text("Color Tool");
             ImGui::ColorEdit4("Left", vertices + 12);
             ImGui::ColorEdit4("Right", vertices + 16);
             ImGui::ColorEdit4("Top", vertices + 20);
-            if ( ImGui::Button("switch") ) 
+            if ( ImGui::Button("switch") )
                 draw = !draw;
             ImGui::SameLine();
             if ( draw ) {

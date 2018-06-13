@@ -29,11 +29,11 @@ public:
     glm::vec3 getPosition();
 
     void setSpeed(float v);
-    void setWidthAndHeight(float w,float h);
+    void setWidthAndHeight(float w, float h);
     void setSensitivity(float s);
     void setPos(float x, float y, float z);
 
-    
+
 
     void moveForward();
     void moveBack();
