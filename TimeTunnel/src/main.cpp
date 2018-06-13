@@ -3,7 +3,7 @@
 #include <iostream>
 #include <imgui.h>
 #include <imgui_impl_glfw_gl3.h>
-
+/*
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -31,6 +31,7 @@ const char *fragmentShaderSource = "#version 330 core\n"
 "void main(){\n"
 "   FragColor = vertexColor;\n"
 "}\n\0";
+
 
 
 int main() {
@@ -202,3 +203,5 @@ int main() {
     glfwTerminate();
     return 0;
 }
+
+*/

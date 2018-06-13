@@ -72,6 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(ProjectDir)imgui;$(ProjectDir)include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\imgui;C:\Users\jskyhuang\workspace\OpenGL_Final_Project\TimeTunnel\include;$(IncludePath)</IncludePath>
@@ -125,23 +126,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="final.cpp" />
-    <ClCompile Include="glad.c" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="imgui\imgui_impl_glfw_gl3.cpp" />
-    <ClCompile Include="model.cpp" />
-    <ClCompile Include="particle.cpp" />
-    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\final.cpp" />
+    <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\model.cpp" />
+    <ClCompile Include="src\particle.cpp" />
+    <ClCompile Include="src\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="particle.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="skybox.h" />
+    <ClInclude Include="include\camera.h" />
+    <ClInclude Include="include\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="include\Model.h" />
+    <ClInclude Include="include\particle.h" />
+    <ClInclude Include="include\shader.h" />
+    <ClInclude Include="include\skybox.h" />
+    <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
