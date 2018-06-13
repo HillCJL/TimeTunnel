@@ -42,6 +42,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{d03fc9f1-b478-4120-aaa5-140fc357b584}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{ccb6e2f0-cf76-4d7d-8cf9-1e0de203aeaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\camera.h">
@@ -65,5 +68,46 @@
     <ClInclude Include="include\stb_image.h">
       <Filter>include</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="assets\shader\final_particle.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_particle.vs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_particle_gaussian.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_particle_gaussian.vs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_particle_hdr.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_phong.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\final_phong.vs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_depth.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_depth.vs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_phong.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_phong.vs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_phong_shadow.fs">
+      <Filter>assets</Filter>
+    </Media>
+    <Media Include="assets\shader\texture_phong_shadow.vs">
+      <Filter>assets</Filter>
+    </Media>
   </ItemGroup>
 </Project>
