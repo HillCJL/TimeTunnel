@@ -1,0 +1,26 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration 
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+newmtl wood
+	 Ka 0 0 0
+	 Kd 0.607843 0.462745 0.317647
+	 Ks 0.455882 0.347059 0.238235
+	 illum 2
+	 Ns 11.3137
+map_Kd wood.jpg
+map_bump wood_b.jpg
+bump wood_b.jpg
+map_kS wood_s.jpg
+newmtl gold
+	 Ka 0 0 0
+	 Kd 0.945098 0.8 0.305882
+	 Ks 0.330784 0.28 0.107059
+	 illum 2
+	 Ns 11.3137
+map_Kd gold.jpg
+map_bump gold_b.jpg
+bump gold_b.jpg
+map_kS gold_s.jpg

@@ -9,7 +9,7 @@ My_Camera::My_Camera() {
     camera_direction = glm::vec3(0.0f, 0.0f, -1.0f);
     camera_up = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    speed = 0.005f;
+    speed = 0.5f;
     p_width = 800;
     p_height = 600;
     p_near = 0.01f;

@@ -1,0 +1,51 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration 
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+newmtl gold2
+	 Ka 0 0 0
+	 Kd 0.952941 0.815686 0.403922
+	 Ks 0.524118 0.448627 0.222157
+	 illum 2
+	 Ns 22.6274
+newmtl runes3
+	 Ka 0 0 0
+	 Kd 0.952941 0.815686 0.403922
+	 Ks 0.524118 0.448627 0.222157
+	 illum 2
+	 Ns 22.6274
+map_Kd runes3.jpg
+map_bump runes3.jpg
+bump runes3.jpg
+newmtl runes2
+	 Ka 0 0 0
+	 Kd 0.952941 0.815686 0.403922
+	 Ks 0.524118 0.448627 0.222157
+	 illum 2
+	 Ns 22.6274
+map_Kd runes2.jpg
+map_bump runes2.jpg
+bump runes2.jpg
+newmtl gold
+	 Ka 0 0 0
+	 Kd 0.952941 0.815686 0.403922
+	 Ks 0.524118 0.448627 0.222157
+	 illum 2
+	 Ns 22.6274
+newmtl runes1
+	 Ka 0 0 0
+	 Kd 0.952941 0.815686 0.403922
+	 Ks 0.524118 0.448627 0.222157
+	 illum 2
+	 Ns 22.6274
+map_Kd runes1.jpg
+map_bump runes1.jpg
+bump runes1.jpg
+newmtl redstn
+	 Ka 0 0 0
+	 Kd 0.180392 0.027451 0.027451
+	 Ks 0.180392 0.027451 0.027451
+	 illum 2
+	 Ns 90.5097

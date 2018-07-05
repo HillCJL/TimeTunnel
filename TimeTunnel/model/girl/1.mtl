@@ -1,0 +1,16 @@
+newmtl Model001_Material001
+map_Kd body_c.png
+map_bump body_n.png
+
+newmtl Model001_Material002
+map_Kd body_c.png
+map_bump body_n.png
+
+newmtl Model001_Material003
+map_Kd hair_c.png
+map_bump hair_n.png
+
+newmtl Model001_Material004
+map_Kd base_00.png
+map_bump base_n.png
+

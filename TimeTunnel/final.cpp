@@ -123,6 +123,7 @@ void use_shader(Shader shader, glm::mat4 view, glm::mat4 projection) {
 }
 
 int main() {
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -156,7 +157,7 @@ int main() {
     Shader shaderBlur("final_particle_gaussian.vs", "final_particle_gaussian.fs");
 
     //在这个地方改下路径就完事了
-    string path("model/nanosuit/nanosuit.obj");
+    string path("model/blacksmith/blacksmiths.obj");
 
     Model ourModel(path, false);
 
@@ -176,12 +177,12 @@ int main() {
 
     float z = 2.0f;
 
-    /*
+   
     round_particle_action::init();
     round_particle_action rpa_1(32, 8, 20.0f, 12.0f, 0.01f, 0.31f, 0.45, -50);
     round_particle_action rpa_2(32, 4, 20.0f, 12.0f, 0.08f, 0.31f, 0.45, -20);
     round_particle_action rpa_3(64, 4, 100.0f, 3.0f, 0.05f, 0.31f, 0.01, 0);
-    */
+
 
     init_particle_buffer();
 
@@ -190,7 +191,7 @@ int main() {
         static bool draw = false;
         ImGui_ImplGlfwGL3_NewFrame();
 
-        processInput(window);
+        processInput(window); 
 
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -238,19 +239,20 @@ int main() {
 
         PhongShader.setVec3("view_pos", mc.getPosition());
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, -20.0f));
+		model = glm::scale(model, glm::vec3(0.005f, 0.005f, 0.005f));
         PhongShader.setMat4("model", model);
 
 
         ourModel.Draw(PhongShader);
 
-        /*
+        
         //取消这块注释就是画粒子隧道
-            use_shader(ParticleShader, view, projection);
+       /*     use_shader(ParticleShader, view, projection);
             rpa_1.Draw(ParticleShader);
             rpa_2.Draw(ParticleShader);
             rpa_3.Draw(ParticleShader);
         
-        */
+        
 
 
 
